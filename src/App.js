@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import { createGlobalStyle } from "styled-components";
 import TodoTemplate from "./components/TodoTemplate";
+import TodoHead from "./components/TodoHead";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -12,7 +13,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <TodoTemplate>안녕하세요</TodoTemplate>
+      <TodoTemplate>
+        <TodoHead
+          todayDate="2021년 1월 18일"
+          day="월요일"
+          leftoverItemCount={2}
+        />
+      </TodoTemplate>
     </>
   );
 }
