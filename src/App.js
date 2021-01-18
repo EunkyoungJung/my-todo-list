@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoHead from "./components/TodoHead";
 import TodoList from "./components/TodoList";
+import TodoItem from "./components/TodoItem.js";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -20,7 +21,12 @@ function App() {
           day="월요일"
           leftoverItemCount={2}
         />
-        <TodoList todoItems={[1, 2, 3]}></TodoList>
+        <TodoList>
+          <TodoItem done={true} text="아침산책" />
+          <TodoItem done={false} text="아침산책" />
+          <TodoItem done={false} text="아침산책" />
+          <TodoItem done={false} text="아침산책" />
+        </TodoList>
       </TodoTemplate>
     </>
   );
