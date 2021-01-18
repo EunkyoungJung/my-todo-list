@@ -35,7 +35,7 @@ function todoReducer(state, action) {
       return state.filter((todo) => todo.id !== action.id);
 
     default:
-      throw new Error("Unhandled action type: ${action.type}");
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
 
@@ -49,9 +49,11 @@ export function TodoProvider({ children }) {
 
   return (
     <TodoStateContext.Provider value={state}>
-      <TodoDispatchContext value={dispatch}>
-        <TodoNextIdContext value={nextId}>{children}</TodoNextIdContext>
-      </TodoDispatchContext>
+      <TodoDispatchContext.Provider value={dispatch}>
+        <TodoNextIdContext.Provider value={nextId}>
+          {children}
+        </TodoNextIdContext.Provider>
+      </TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
   );
 }
