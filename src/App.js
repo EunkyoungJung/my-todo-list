@@ -23,12 +23,7 @@ function App() {
           day="월요일"
           leftoverItemCount={2}
         />
-        <TodoList>
-          <TodoItem done={true} text="아침산책" />
-          <TodoItem done={false} text="아침산책" />
-          <TodoItem done={false} text="아침산책" />
-          <TodoItem done={false} text="아침산책" />
-        </TodoList>
+        <TodoList />
         <TodoCreate />
       </TodoTemplate>
     </TodoProvider>
