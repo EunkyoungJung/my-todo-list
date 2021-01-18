@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import { createGlobalStyle } from "styled-components";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoHead from "./components/TodoHead";
+import TodoList from "./components/TodoList";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -19,6 +20,7 @@ function App() {
           day="월요일"
           leftoverItemCount={2}
         />
+        <TodoList todoItems={[1, 2, 3]}></TodoList>
       </TodoTemplate>
     </>
   );
